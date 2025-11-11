@@ -1,0 +1,18 @@
+# QA Engineer Take-Home – Cypress Tests
+
+## UI Test Coverage
+| Feature | Test File | Status | Description |
+|----------|------------|--------|--------------|
+| Add Customer | `addCustomer.cy.ts` |  Passed | Fills the form and verifies new row appears |
+| Edit Customer | `editCustomer.cy.ts` |  Passed | Finds row by last name and updates a field |
+| View Customer | `viewCustomer.cy.ts` |  Skipped | Placeholder for viewing customer modal (pending feature) |
+| Delete Customer | `deleteCustomer.cy.ts` |  Skipped | Placeholder for delete flow (pending feature) |
+
+##  Notes
+- Cypress tests written in TypeScript (`.cy.ts`).
+- Used `cy.contains()`, `.parents('tr')`, and `.within()` for scoped DOM targeting.
+- Added `{ force: true }` for modal elements that load behind overlays.
+- Pending features (View/Delete) marked with `it.skip()` per README instructions.
+- Tested locally via `npm run dev` + `npx cypress open`.
+
+
