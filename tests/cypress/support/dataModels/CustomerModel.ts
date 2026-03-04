@@ -17,11 +17,11 @@ export function generateCustomer(): Customer {
         firstName: random.getFirstName(),
         lastName: random.getLastName(),
         email: random.getEmail(),
-        addressLine1: random.getAddress(),
-        addressLine2: "",
-        city: "",
-        state: "",
-        zip: "",
-        notes: "",
+        addressLine1: random.getAddress1(),
+        addressLine2: random.getAddress2(),
+        city: random.getCity(),
+        state: random.getState(),
+        zip: random.getZip(),
+        notes: random.getNotes(),
     }
 }

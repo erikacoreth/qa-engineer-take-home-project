@@ -1,6 +1,7 @@
 import { Customer } from "../support/dataModels/CustomerModel";
 
 const selectors = {
+    addCustomer: '[data-testid="add-customer-button"]',
     customerRow: '[data-testid^="customer-row-"]',
     edit: '[data-testid^="edit-customer-button-"]',
     firstName: '[data-testid="first-name"]'
@@ -8,7 +9,7 @@ const selectors = {
 
 export default class CustomerPage {
     clickAddCustomer(): void {
-        cy.get('[data-testid="save-button"]').click({ force: true });
+        cy.get(selectors.addCustomer).click({ force: true });
     }
 
     openEditCustomer(email: string): void {
