@@ -15,16 +15,17 @@ const selectors = {
 };
 
 export default class CustomerModal {
+
     fill(customer: Customer): void {
-        cy.get(selectors.firstName).type(customer.firstName);
-        cy.get(selectors.lastName).type(customer.lastName);
-        cy.get(selectors.email).type(customer.email);
-        cy.get(selectors.addressLine1).type(customer.addressLine1);
-        cy.get(selectors.addressLine2).type(customer.addressLine2);
-        cy.get(selectors.city).type(customer.city);
-        cy.get(selectors.state).type(customer.state);
-        cy.get(selectors.zip).type(customer.zip);
-        cy.get(selectors.notes).type(customer.notes);
+        cy.get(selectors.firstName).clear().type(customer.firstName);
+        cy.get(selectors.lastName).clear().type(customer.lastName);
+        cy.get(selectors.email).clear().type(customer.email);
+        cy.get(selectors.addressLine1).clear().type(customer.addressLine1);
+        cy.get(selectors.addressLine2).clear().type(customer.addressLine2);
+        cy.get(selectors.city).clear().type(customer.city);
+        cy.get(selectors.state).clear().type(customer.state);
+        cy.get(selectors.zip).clear().type(customer.zip);
+        cy.get(selectors.notes).clear().type(customer.notes);
     }
 
     save(): void {
@@ -32,7 +33,14 @@ export default class CustomerModal {
     }
 
     validate(customer: Customer): void {
-        cy.get(selectors.firstName).should('have.value', customer.firstName);
-        // ...
+        cy.get(selectors.firstName).should("have.value", customer.firstName);
+        cy.get(selectors.lastName).should("have.value", customer.lastName);
+        cy.get(selectors.email).should("have.value", customer.email);
+        cy.get(selectors.addressLine1).should("have.value", customer.addressLine1);
+        cy.get(selectors.addressLine2).should("have.value", customer.addressLine2 ?? "");
+        cy.get(selectors.city).should("have.value", customer.city);
+        cy.get(selectors.state).should("have.value", customer.state);
+        cy.get(selectors.zip).should("have.value", customer.zip);
+        cy.get(selectors.notes).should("have.value", customer.notes ?? "");
     }
 }
